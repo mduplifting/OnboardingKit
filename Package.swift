@@ -8,7 +8,7 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [
         .macOS(.v13),
-        .iOS(.v16)
+        .iOS(.v17)
     ],
     products: PackageProduct.allCases.map(\.description),
     targets: InternalTarget.allCases.map(\.target)
