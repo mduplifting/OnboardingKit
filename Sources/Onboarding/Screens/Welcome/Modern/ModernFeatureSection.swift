@@ -34,7 +34,8 @@ struct ModernFeatureSection: View {
     private func cardView(for index: Int) -> some View {
         ModernFeatureCard(
             feature: config.features[index],
-            accentColor: config.accentColor
+            accentColor: config.accentColor,
+            backgroundColor: config.backgroundColor
         )
         .opacity(isAnimating[index] ? 1 : 0)
         .offset(y: isAnimating[index] ? 0 : 100)
@@ -49,6 +50,7 @@ struct ModernFeatureSection: View {
 private struct ModernFeatureCard: View {
     let feature: FeatureInfo
     let accentColor: Color
+    let backgroundColor: Color
 
     var body: some View {
         HStack(spacing: 16) {
@@ -75,7 +77,7 @@ private struct ModernFeatureCard: View {
         }
         .padding(16)
         .background(
-            Color.onboardingSecondaryBackground,
+            backgroundColor,
             in: RoundedRectangle(cornerRadius: 12, style: .continuous)
         )
     }
