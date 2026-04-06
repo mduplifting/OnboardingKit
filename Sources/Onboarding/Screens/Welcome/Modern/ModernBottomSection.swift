@@ -9,6 +9,7 @@ import SwiftUI
 @MainActor
 struct ModernBottomSection {
     let accentColor: Color
+    let backgroundColor: Color
     let termsOfServiceURL: URL
     let privacyPolicyURL: URL
     let continueAction: () -> Void
@@ -41,7 +42,7 @@ extension ModernBottomSection: View {
             .tint(accentColor)
         }
         .padding(20)
-        .background(Color.onboardingSecondaryBackground)
+        .background(backgroundColor)
         .opacity(isAnimating ? 1 : 0)
         .onAppear(perform: onAppear)
     }
@@ -50,6 +51,7 @@ extension ModernBottomSection: View {
 #Preview {
     ModernBottomSection(
         accentColor: .blue,
+        backgroundColor: .gray,
         termsOfServiceURL: URL(string: "https://example.com/terms")!,
         privacyPolicyURL: URL(string: "https://example.com/privacy")!,
         continueAction: {}
