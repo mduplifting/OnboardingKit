@@ -116,6 +116,7 @@ extension ModernWelcomeScreen: View {
     private func bottomSection() -> some View {
         ModernBottomSection(
             accentColor: config.accentColor,
+            backgroundColor: config.backgroundColor,
             termsOfServiceURL: config.termsOfServiceURL,
             privacyPolicyURL: config.privacyPolicyURL,
             continueAction: config.continueAction
