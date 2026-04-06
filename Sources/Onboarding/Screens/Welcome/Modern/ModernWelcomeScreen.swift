@@ -46,6 +46,7 @@ public struct ModernWelcomeScreen {
         func with(continueAction: @escaping () -> Void) -> Self {
             .init(
                 accentColor: accentColor,
+                backgroundColor: backgroundColor,
                 appDisplayName: appDisplayName,
                 appIcon: appIcon,
                 features: features,
