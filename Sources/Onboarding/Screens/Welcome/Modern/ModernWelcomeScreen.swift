@@ -12,6 +12,7 @@ public struct ModernWelcomeScreen {
     /// Configuration for the modern welcome screen.
     public struct Configuration {
         public let accentColor: Color
+        public let backgroundColor: Color
         public let appDisplayName: String
         public let appIcon: Image
         public let features: [FeatureInfo]
@@ -22,6 +23,7 @@ public struct ModernWelcomeScreen {
 
         public init(
             accentColor: Color = .blue,
+            backgroundColor: Color? = nil,
             appDisplayName: String,
             appIcon: Image,
             features: [FeatureInfo],
@@ -38,6 +40,7 @@ public struct ModernWelcomeScreen {
             self.privacyPolicyURL = privacyPolicyURL
             self.titleSectionAlignment = titleSectionAlignment
             self.continueAction = continueAction
+            self.backgroundColor = backgroundColor ?? Color.onboardingSecondaryBackground
         }
 
         func with(continueAction: @escaping () -> Void) -> Self {
@@ -92,7 +95,7 @@ extension ModernWelcomeScreen: View {
         }
         .scrollIndicators(.hidden)
         .safeAreaInset(edge: .bottom, content: bottomSection)
-        .background(Color.onboardingSecondaryBackground)
+        .background(config.backgroundColor)
         .onAppear(perform: onAppear)
         .dynamicTypeSize(.xSmall ... .xxxLarge)
     }
