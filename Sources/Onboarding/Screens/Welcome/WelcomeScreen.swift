@@ -35,6 +35,7 @@ public extension WelcomeScreen {
 
     static func modern(
         accentColor: Color = .blue,
+        backgroundColor: Color? = nil,
         appDisplayName: String,
         appIcon: Image,
         features: [FeatureInfo],
@@ -44,6 +45,7 @@ public extension WelcomeScreen {
         .modern(
             .init(
                 accentColor: accentColor,
+                backgroundColor: backgroundColor,
                 appDisplayName: appDisplayName,
                 appIcon: appIcon,
                 features: features,
